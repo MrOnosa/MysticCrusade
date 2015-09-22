@@ -1,21 +1,30 @@
 //var pg = require('pg');
-var express = require('express');
-var app = express();
+//var express = require('express');
+//var app = express();
 //var cool = require('cool-ascii-faces');
-var http = require('http').Server(app);
+//var http = require('http').Server(app);
 //var io = require('socket.io')(http);
 
-app.set('port', (process.env.PORT || 3000));
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(process.env.PORT || 1337);
+
+console.log('Server running at http://127.0.0.1:1337/');
+
+//app.set('port', (process.env.PORT || 3000));
 
 //app.get('/', function(request, response) {
 //  response.send(cool());
 //});
 
-app.get('/', function(request, response) {
-  var result = "<HTML><BODY><H1>Mystic Crusade</H1>";  
-  result += '</BODY></HTML>'
-  response.send(result);
-})
+//app.get('/', function(request, response) {
+//  var result = "<HTML><BODY><H1>Mystic Crusade</H1>";  
+//  result += '</BODY></HTML>'
+//  response.send(result);
+//})
 
 //app.get('/db', function (request, response) {
 //  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
