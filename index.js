@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express();
 //var cool = require('cool-ascii-faces');
-//var http = require('http').Server(app);
+var http = require('http').Server(app);
 //var io = require('socket.io')(http);
 
 app.set('port', (process.env.PORT || 3000));
