@@ -1,24 +1,32 @@
+//var http = require('http');
+//
+//http.createServer(function (req, res) {
+//  res.writeHead(200, {'Content-Type': 'text/plain'});
+//  res.end('Hello World\n');
+//}).listen(process.env.PORT || 1337);
+//
+//console.log('Server running at http://127.0.0.1:1337/');
 //var pg = require('pg');
-//var express = require('express');
-//var app = express();
+var express = require('express');
+var app = express();
 //var cool = require('cool-ascii-faces');
 //var http = require('http').Server(app);
 //var io = require('socket.io')(http);
 
-var http = require('http');
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(process.env.PORT || 1337);
-
-console.log('Server running at http://127.0.0.1:1337/');
 
 //app.set('port', (process.env.PORT || 3000));
 
-//app.get('/', function(request, response) {
-//  response.send(cool());
-//});
+app.get('/', function(request, response) {
+  response.send("Hello World 2");
+});
+
+var server = app.listen((process.env.PORT || 3000), function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});
 
 //app.get('/', function(request, response) {
 //  var result = "<HTML><BODY><H1>Mystic Crusade</H1>";  
